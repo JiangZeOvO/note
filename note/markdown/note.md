@@ -263,7 +263,7 @@
 > ```md
 > ![图片标题][image]
 > 
-> [image]: ../../resource/image/test.jpg "悬浮信息"
+> [image]: ../image/test.jpg "悬浮信息"
 > ```
 >
 > ### **表格**
