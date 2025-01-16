@@ -255,7 +255,7 @@
 > ### **普通图片**
 >
 > ```md
-> ![图片标题](../../resource/image/test.jpg "悬浮信息")
+> ![图片标题](image/test.jpg "悬浮信息")
 > ```
 >
 > ### **引入图片**
@@ -263,7 +263,7 @@
 > ```md
 > ![图片标题][image]
 > 
-> [image]: ../image/test.jpg "悬浮信息"
+> [image]: image/test.jpg "悬浮信息"
 > ```
 >
 > ### **表格**
