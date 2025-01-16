@@ -185,5 +185,6 @@
 > ##### 图片
 >
 > ```md
-> 
+> ![图片标题](../../resource/image/test.jpg "悬浮信息")
 > ```
+> ![图片标题](../../resource/image/test.jpg "悬浮信息")
