@@ -8,8 +8,8 @@
 
 > |                    评分                     |                        软件                        | 注释                    |
 > |:-----------------------------------------:|:------------------------------------------------:|:----------------------|
-> | <spwan style="color:yellow">★★★★★</spwan> |      [Typore](https://typora.io/ "点击进入官网")       | 非常适配markdown语言        |
-> | <spwan style="color:yellow">★★★★☆</spwan> | [IDEA](https://www.jetbrains.com/idea/ "点击进入官网") | 持大部分语法,但是功能和用户体验不是特别好 |
+> | <span style="color:yellow">★★★★★</span> |      [Typore](https://typora.io/ "点击进入官网")       | 非常适配markdown语言        |
+> | <span style="color:yellow">★★★★☆</span> | [IDEA](https://www.jetbrains.com/idea/ "点击进入官网") | 持大部分语法,但是功能和用户体验不是特别好 |
 
 ## 语法
 
@@ -62,7 +62,7 @@
 > ```md
 > H~2~O
 > ```
-> 
+>
 > ### **表情**
 >
 > ```md
