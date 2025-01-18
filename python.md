@@ -1,3 +1,9 @@
+<style>
+    *{
+        font-size:16px;
+        font-family: "微软雅黑";
+    }
+</style>
 # Python 相关知识笔记
 
 ## 1. Python 概述
@@ -95,4 +101,3 @@ var = """test"""
 | ----------- | :---: | ------ | ------------ |
 | `substring` | `str` |        | 查询的字符串 |
 | `[start]`   |       |        |              |
-
