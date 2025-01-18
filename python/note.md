@@ -214,8 +214,10 @@
 > >> 	list_1 = []
 > >> 	list_2 = list_1
 > >> # 推导式
-> >> 	list = [x ** 2 for x in range(1, 7)]							# 结果[1,4,9,16,25,36]
-> >> 	list = [x ** 2 for x in [1, 2, "a", 3, 4.0] if type(x) == int]		# 结果[1,4,9]
+> >> 	list = [x ** 2 for x in range(1, 7)]
+> >>     	# 结果[1, 4, 9, 16, 25, 36]
+> >> 	list = [x ** 2 for x in [1, 2, "a", 3, 4.0] if type(x) == int]
+> >>     	# 结果[1, 4, 9]
 > >> ```
 > >>
 > >> 
