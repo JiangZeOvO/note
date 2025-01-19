@@ -488,7 +488,7 @@ var = None
 #   i not in 序列
 #       [序列]中是否不包含索引[i]
 # 遍历
-	var = "123456"
+    var = "123456"
     for i in var :
         pass
 ```
@@ -545,20 +545,20 @@ var = None
 
 ```python
 # 定义
-	def function_name(param):
+    def function_name(param):
         """
             函数的帮助信息,通过help(function_name)会返回这段信息
         """
         pass
 # 默认参数
-	def login(user, pswd="password"):
-    	pass
+    def login(user, pswd="password"):
+        pass
     login("username")
         # user形参接收"username"
         # pswd形参默认"password"
 # 指定参数
-	def login(user="username",pswd="password"):
-    	pass
+    def login(user="username",pswd="password"):
+        pass
     login(pswd="password",user="username")
         # 传递时可以指定形参传递,但必须先传递[非指定参数],再传递[指定参数]
 # lambda表达式
