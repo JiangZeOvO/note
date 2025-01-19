@@ -1,0 +1,22 @@
+设置
+	AutoSave 自动保存
+		off 关闭
+		afterDelay 每次修改代码后[AutoSaveDelay]秒保存
+		onFocusChange 当文档焦点改变的时候
+		onWindowChange 当窗口焦点改变的时候
+	扩展 -> Emmet -> Variables 修改HTML文档快速生成框架的配置
+扩展[插件]
+	LiveServer 实时调试在网页上的代码效果
+		用法
+			右键HTML文档 选中Open with Live Server
+		注意
+			需要打开的是一个文件夹
+			HTML文档需要有html,head,body标签的框架
+	FileIcons 文件图标
+快捷键
+	Shift Alt ↑ 向上复制当前行
+	Shift Alt ↓ 向下复制当前行
+	Ctrl Shift K 删除当前光标选择行
+编辑
+	关键词
+		lorem 随机生成英文文本 后面可以跟一个数字限制单词数量 [lorem60]

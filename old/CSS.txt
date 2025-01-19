@@ -1,0 +1,449 @@
+发展
+	了解
+		层叠级联样式表 Cascading Style Sheet
+		对HTML代码的表现层进行标记
+	发展
+		CSS 1.0
+			HTML与CSS文件未分离
+		CSS 2.0
+			HTML与CSS结构分离的思想,网页更简洁
+		CSS 2.1
+			浮动 定位等属性可使用
+		CSS 3
+			圆角 阴影 动画 等属性可使用(有一些浏览器兼容性问题)
+关联
+	方式
+		外部
+			使用
+				通过<link/>标签引入CSS文件
+				通过<style>标签 在标签内 [@import url(地址);] 引入CSS文件 (CSS2.1的方式)
+					弊端 浏览器会先渲染网页 再渲染样式 不推荐使用
+			优势
+				内容结构与表现分离
+				网页结构统一方便后续修改 阅读
+				利用SEO 容易被搜索引擎收录
+		内部
+			使用 在<style>标签内编辑CSS样式代码
+			举例
+				<style>CSS样式</style>
+				<style tyle="text/css">CSS样式</style>
+		行内
+			使用 通过元素的style属性进行编辑CSS代码
+	优先级
+		顺序 !important > 行内样式 > 外部和内部样式 > 浏览器默认样式
+		注意 !important相关的一些问题 使用时 会使CSS层叠样式表调用起来非常困难 一般情况下不推荐使用 除非万不得已
+语法
+	学名
+		选择器 {
+			属性名: 属性值;
+		}
+	注释
+		// 单行注释
+		/**/ 多行注释
+	风格
+		展开
+			举例
+				选择器 {
+					属性名: 属性值;
+				}
+			用途 项目编辑的时候使用展开风格 方便修改查看理解
+		紧凑
+			举例
+				选择器{属性名:属性值;}
+			用途 项目上线的时候推荐使用紧凑风格 减小文件体积 节省流量 减少用户打开网页时间
+关系
+	父级 当前元素的上一级元素
+	子级 当前元素的下一级元素
+	同级 当前元素相邻级的元素
+	祖级 当前元素的上N级元素
+	后代 当前元素的下N级元素
+选择器
+	基础
+		通配符 *
+			含义 选中所有可以选中的标签
+		标签名 body
+			含义 选中所有该标签
+		类 .class
+			含义 选中所有class属性等于该值的标签
+		ID #id
+			含义 选中id属性等于该值的标签
+	属性
+		属性名 [title]
+			含义 选中拥有该属性的标签
+		属性值 [title=test]
+			含义 选中拥有该属性等于该值的标签
+		属性值起始匹配 [title^=test]
+			含义 选中拥有该属性等于该值开头的标签
+		属性值结尾匹配 [title$=test]
+			含义 选中拥有该属性等于该值结尾的标签
+		属性值全局匹配 [title*=test]
+			含义 选中拥有该属性中包含该值的标签
+	伪类
+		<a>标签
+			未访问 a:link
+				含义 <a>标签未被点击过
+			已访问 a:visited
+				含义 <a>标签已被点击过
+		<form>标签
+			焦点 input[type=text]:focus
+				含义 鼠标选择文本框并且处于编辑状态时
+			选中 input[type=checkbox]:focus
+				含义 多选框/单选框被选中时
+			禁用 input[type=text]:disabled
+				含义 当文本框被禁用时
+			可用 input[type=text]:enabled
+				含义 当文本框可用时
+		通用标签
+			悬浮 body:hover
+				含义 当鼠标悬浮在该标签上时
+			激活 body:active
+				含义 当鼠标在该标签上按下但未抬起时
+	结构
+		限制选中首个 li:first-child
+			含义 在li的父级中 选中第一个 如果第一个标签为li则选中 否则选空
+		限制选中尾个 li:last-child
+			含义 在li的父级中 选中最后一个 如果最后一个标签为li则选中 否则选空
+		限制选中第N个 li:nth-child(n)
+			含义 在li的父级中 选中第N个 如果第N个标签为li则选中 否则选空
+			公式
+				全部元素
+					nth-child(n)
+				偶数位元素
+					nth-child(2n)
+					nth-child(even)
+				奇数位元素
+					nth-child(2n+1)
+					nth-child(odd)
+				前5个元素
+					nth-child(-n+5)
+		限制选中倒数第N个 li:nth-last-child(n)
+			含义 在li的父级中 选中倒数第N个 如果倒数第N个标签为li则选中 否则选空
+			公式
+				全部元素
+					nth-last-child(n)
+				倒数偶数位元素
+					nth-last-child(2n)
+					nth-last-child(even)
+				倒数奇数位元素
+					nth-last-child(2n+1)
+					nth-last-child(odd)
+				倒数前5个元素
+					nth-last-child(-n+5)
+		查询选中首个 li:first-of-type
+			含义 在li的父级中 选中第1个li标签 如果有则选中 否则选空
+		查询选中末尾 li:last-of-type
+			含义 在li的父级中 选中最后1个li标签 如果有则选中 否则选空
+		查询选中第N个 li:nth-of-type(n)
+			含义 在li的父级中 选中第N个li标签 如果有则选中 否则选空
+			公式
+				全部元素
+					nth-of-type(n)
+				偶数位元素
+					nth-of-type(2n)
+					nth-of-type(even)
+				奇数位元素
+					nth-of-type(2n+1)
+					nth-of-type(odd)
+				前5个元素
+					nth-of-type(-n+5)
+		查询选中倒数第N个 li:nth-last-of-type(n)
+			含义 在li的父级中 选中倒数第N个li标签 如果有则选中 否则选空
+			公式
+				全部元素
+					nth-last-of-type(n)
+				倒数偶数位元素
+					nth-last-of-type(2n)
+					nth-last-of-type(even)
+				倒数奇数位元素
+					nth-last-of-type(2n+1)
+					nth-last-of-type(odd)
+				倒数前5个元素
+					nth-last-of-type(-n+5)
+		限制选中唯一 li:only-child
+			含义 在li的父级中 如果只有1个li元素 则选中 否则选空
+		查询唯一元素 li:only-of-type
+			含义 在li的父级中 如果li元素只有1个 则选中 否则选空
+		跟元素 :root
+			含义 选中跟元素 也就是html标签
+		空元素 div:empty
+			含义 选中所有div(选择器)内容为空的元素
+		同级排除选中 li:not(.test)
+			含义 在li的父级中 选中所有li但是不符合.test选择器的元素
+	其他
+		锚点 div:target
+			含义 选中所有div元素中id等于网址栏锚点值的元素
+		语言 div:lang(en)
+			含义 选中所有div元素中lang属性等于en的元素
+	伪元素
+		首个字符 div::first-letter
+			含义 选中div中第一个文本字符
+		首行 div::first-line
+			含义 选中div中的第一行文本
+		提示文本 input[type=text]::placeholder
+			含义 选中输入框的placeholder属性的提示文本
+		前置内容 div::before
+			含义 在div前面添加的显示文本
+			举例
+				div::before {
+					content: ”显示文本”
+				}
+		后置内容 div::after
+			含义 在div后面添加的显示文本
+			举例
+				div::after{
+					content: ”显示文本”
+				}
+	复合
+		交集 div.test#test
+			含义 选中同时复合三个选择器的元素
+		并集 div,.test,#test
+			含义 选中至少符合三个选择器其中一个的元素
+		后代 div .test
+			含义 选中div中符合.test的元素
+		子代 div>.test
+			含义 选中div的子代中符合.test的元素
+		单个弟级 div+.test
+			含义 选中div的下一个弟级元素 如果该元素符合.test则选中 否则选空
+		所有弟级 div~.test
+			含义 选中div的所有弟级元素中符合.test的元素
+特性
+	层叠性
+		如果样式发生了冲突,会根据权重优先级进行层叠(覆盖)
+	继承性
+		元素会拥有祖级元素设置的某些样式
+		优先继承距离近的祖级元素的样式
+值类型
+	长度
+		绝对单位
+			cm 厘米
+			mm 毫米
+			px 像素
+		相对单位
+			em 倍数
+				相对于当前元素的font-size的倍数
+			rem 倍数
+				相对于root跟(html元素)的font-size的倍数
+			% 百分比
+				相对于父级元素的%
+	颜色
+		英文单词
+			举例 red blue green
+		RGB/RGBA
+			举例
+				RGB(255,255,255) 白色
+				RGB(100%,100%,100%) 白色
+				RGBA(255,255,255,1) 白色 无透明
+				RGBA(255,255,255,100%) 白色 无透明
+		HEX/HEXA
+			举例
+				#FFFFFF 白色
+				#FFFFFFFF 白色 无透明
+			缩写
+				#FFF 白色
+				#FFFF 白色 无透明
+			注意
+				IE浏览器不支持HEXA
+		HSL/HSLA
+			举例
+				hsl(色相,饱和度,明度/亮度)
+				hsla(色相,饱和度,明度/亮度,透明度)
+				hsl(0deg,100%,50%) 红色
+				hsla(0deg,100%,50%,1) 红色 无透明
+				hsla(0deg,100%,50%,100%) 红色 无透明
+			参数
+				色相
+					0 ~ 360
+					0deg ~ 360deg
+						0deg 红色
+						120deg 绿色
+						240deg 蓝色
+				饱和度
+					0% ~ 100%
+						0% 黑白
+						100% 彩色
+				亮度
+					0% ~ 100%
+						0% 全黑
+						50% 正常
+						100% 全亮
+注意
+	字体
+		由于字体设计原因 字体最终呈现并非与font-size大小一致 可能会有大小偏差
+		通常情况下字体也并非垂直居中 通常字体会靠下 有些字体也会考上
+属性
+	字体
+		font 复合属性
+			要求
+				font-size 必须写在倒数第二位
+				font-family 必须写在倒数第一位
+			可用
+				font-size
+				font-family
+				font-weight
+				font-style
+		font-size 字体大小
+			取值 长度
+		font-family 字体族
+			取值 enum
+			举例
+				微软雅黑
+				"微软雅黑"
+				'微软雅黑'
+				"微软雅黑","楷体"[,...],sans-serif
+					sans-serif 电脑中默认的非衬线字体
+					serif 电脑中默认的衬线字体
+		font-style 字体风格/字体样式
+			取值 enum
+				normal 正常 默认
+				italic 斜体
+					找到字体包当前文本作者制作的斜体字体样式 有则使用 没有则强制倾斜
+				oblique 斜体
+					找到字体包当前文本作者制作的正常字体样式 强制倾斜
+		font-weight 字体粗细
+			取值 enum
+				lighter || 100-300 细
+				normal || 400-500 正常 默认
+				blod || 600-1000 粗
+				bolder 更粗
+					字体包中设计更粗字体样式 则使用 没有则使用粗字体样式
+			注释
+				该取值具体看字体设置的精度样式
+	文本
+		color 颜色
+			取值 颜色
+		letter-spacing 字符间距
+			取值 长度
+			注释 如果该值小于0 字符间距为负数 显示效果叠加字符
+		word-spacing 单词间距
+			取值 长度
+			注释 系统通过空格区分单词
+		text-decoration 文本修饰
+			取值 enum enum 颜色
+				修饰线
+					overline 上划线
+					underline 下划线
+					line-through 删除线
+					none 无 默认
+				类型
+					dotted 虚线
+					wavy 波浪线
+		text-indent 文本缩进
+			取值 长度
+		text-align 文本水平对齐
+			取值 enum
+				left 左 默认
+				center 居中
+				right 右
+		line-height 文本行高
+			取值 长度
+		vertical-align 单行文本垂直对齐方式
+			取值 enum
+				top 顶部
+				bottom 底部
+				baseline 基线 默认
+				middle 使元素的中间与父级的"x"字符的中心位置对齐
+			注意 该属性无法控制块级元素
+		
+	列表
+		list-style 复合属性
+			要求 无先后数量要求
+			可用
+				list-style-type
+				list-style-position
+				list-style-image
+		list-style-type 列表符号样式类型
+			取值 enum
+				none 无
+				lower-roman 小写罗马数字
+				upper-roman 大写罗马数字
+				decimal 数字
+		list-style-position 列表符号位置
+			取值 enum
+				outside 列表符号处于li的外侧 (li的背景色不会包括列表符号)
+				inside 列表符号处于li的内测 (li的背景色会包括列表符号)
+		list-style-image 自定义列表符号
+			取值 路径
+	边框
+		border 复合属性
+			要求 border-width border-color border-style必须按照顺序写 并且不可以缺少任何一个值
+			可用
+				border-width
+				border-color
+				border-style
+		border-width 边框宽度
+			取值 长度
+		border-color 边框颜色
+			取值 颜色
+		border-style 边框样式
+			取值 enum
+				solid 实线
+				dashed 虚线
+				dotted 点线
+				double 双实线
+	表格
+		table-layout 表格布局/列宽分配
+			取值 enum
+				auto 自动 默认
+				fixed 均分
+		border-spacing 单元格间距
+			取值 长度
+		border-collapse 单元格合并边框
+			取值 enum
+				separate 分离 默认
+				collapse 合并
+		empty-cells 隐藏无内容单元格
+			取值 enum
+				show 显示 默认
+				hide 隐藏
+		coation-side 设置表格标题位置
+			取值 enum
+				top 顶部 默认
+				bottom 底部
+	背景
+		background 复合属性
+			要求
+				background-color background-image background-repeat background-position 不限位置顺序
+			可用
+				background-color
+				background-image
+				background-position
+				background-size
+				background-repeat
+				background-origin
+				background-clip
+				background-attachment
+		background-color 背景颜色
+			取值 颜色
+		background-image 背景图片
+			取值 路径
+		background-repeat 背景图片重复
+			取值 enum
+				repeat 重复 默认
+				no-repeat 不重复
+				repeat-x 水平重复
+				repeat-y 垂直重复
+		background-position 背景图片位置
+			取值 enum enum
+				水平
+					left 左侧
+					center 居中
+					right 右侧
+					长度
+				垂直
+					top 顶部
+					center 居中
+					bottom 底部
+					长度
+	鼠标
+		cursor 样式
+			取值 enum
+				pointer 手形
+				wait 等待
+				crosshair 十字架
+				help 帮助  
+				路径,pointer 图片
+盒模型
+	
+注意
+	复合属性
+		虽然有些子属性不需要传递 但是对于复合属性来说 哪些忽略掉的属性是传递了默认值 有些属性会顶替掉 之前设置的子属性 更换成默认值
