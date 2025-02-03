@@ -13,6 +13,7 @@
 			需要打开的是一个文件夹
 			HTML文档需要有html,head,body标签的框架
 	FileIcons 文件图标
+	GitHub Repositories 在线打开GitHub项目
 快捷键
 	Shift Alt ↑ 向上复制当前行
 	Shift Alt ↓ 向下复制当前行
@@ -20,3 +21,4 @@
 编辑
 	关键词
 		lorem 随机生成英文文本 后面可以跟一个数字限制单词数量 [lorem60]
+
