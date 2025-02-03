@@ -99,21 +99,22 @@ graph TB
     Start(<div style="text-align:center;width:128px;">Start</div>):::Start
     C(<div style="text-align:center;width:128px;">GPU进程</div>):::C
     D(<div style="text-align:center;width:128px;">GPU硬件</div>):::D
-    Start --> E(<div style="text-align:center;width:64px;">①解析</div>):::A
-    --> F(<div style="text-align:center;width:64px;">②样式</div>):::A
-    --> G(<div style="text-align:center;width:64px;">③布局</div>):::A
-    --> H(<div style="text-align:center;width:64px;">④分层</div>):::A
-    --> I(<div style="text-align:center;width:64px;">⑤绘制</div>):::A
-    I --> J
+    Start -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">HTML文档</div>.-> E(<div style="text-align:center;width:64px;">①解析</div>):::A
+    -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">DOM Tree & CSSOM Tree</div>.-> F(<div style="text-align:center;width:64px;">②样式</div>):::A
+    -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">Computed Style DOM Tree</div>.-> G(<div style="text-align:center;width:64px;">③布局</div>):::A
+    -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">Layout Tree</div>.-> H(<div style="text-align:center;width:64px;">④分层</div>):::A
+    -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">Layer Tree</div>.-> I(<div style="text-align:center;width:64px;">⑤绘制</div>):::A
+    
+    I -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">Draw Instruction Set</div>.->  J
     J(<div style="text-align:center;width:64px;">⑥分块</div>):::B
     J --- K(<div style="text-align:center;width:64px;">分块器1</div>):::B
     J --- L(<div style="text-align:center;width:64px;">分块器2</div>):::B
     J --- M(<div style="text-align:center;width:64px;">分块器3</div>):::B
     K --> N
-    L --> N
+    L -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">Layer Data</div>.-> N
     M --> N
     N(<div style="text-align:center;width:64px;">⑦光栅</div>):::C
-    --> O(<div style="text-align:center;width:auto;">⑧画#40;生成指引&#41;</div>):::B
+    -.<div style="background:gray;color:white;font-size:12px;transform:translateY(-4px)">Bitmap Data</div>.-> O(<div style="text-align:center;width:auto;">⑧画#40;生成指引&#41;</div>):::B
     --> P(<div style="text-align:center;width:auto;">⑧画#40;调用显卡&#41;</div>):::C
     --> Q(<div style="text-align:center;width:auto;">⑧画#40;屏幕成像&#41;</div>):::D
 ```
